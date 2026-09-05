@@ -115,7 +115,7 @@ public class DoublyLinkedList<E> {
     }
 
     public void group(){
-        Node current = head;
+        Node current = header;
         int count = 0;
 
         while(current != null){
@@ -126,13 +126,13 @@ public class DoublyLinkedList<E> {
                 if(prev != null){
                 prev.setNext(next);
                 } else{
-                    head = next;
+                    header = next;
                 }
 
                 if(next != null){
                     next.setPrev(prev);
                 } else{
-                    tail = prev;
+                    trailer = prev;
                 }
 
                 count++;
