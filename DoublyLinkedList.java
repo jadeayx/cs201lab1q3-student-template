@@ -115,6 +115,36 @@ public class DoublyLinkedList<E> {
     }
 
     public void group(){
+        Node current = head;
+        int count = 0;
 
+        while(current != null){
+            Node next = current.getNext();
+            if(next.getElement() == null){
+                Node prev = current.getPrev();
+                
+                if(prev != null){
+                prev.setNext(next);
+                } else{
+                    head = next;
+                }
+
+                if(next != null){
+                    next.setPrev(prev);
+                } else{
+                    tail = prev;
+                }
+
+                count++;
+            }
+            
+            current = next;
+        }
+
+        for(int i = 0; i < count; i++){
+            addFirst(null);
+        }
+
+        
     }
 }
