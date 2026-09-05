@@ -120,11 +120,11 @@ public class DoublyLinkedList<E> {
 
         while(current != null){
             Node next = current.getNext();
-            if(next.getElement() == null){
+            if(current.getElement() == null){
                 Node prev = current.getPrev();
                 
                 if(prev != null){
-                prev.setNext(next);
+                    prev.setNext(next);
                 } else{
                     header = next;
                 }
